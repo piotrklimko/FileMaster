@@ -1,0 +1,33 @@
+﻿<Window x:Class="FileMaster.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FileMaster" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Pasek nawigacyjny -->
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10">
+            <TextBox Name="PathTextBox" Width="600" Text="C:\\" />
+            <Button Content="Go" Click="OnGoButtonClick" Margin="5,0,0,0"/>
+        </StackPanel>
+
+        <!-- Panel lewy -->
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Text="Lewa Kolumna" FontWeight="Bold" Margin="10"/>
+            <ListBox Name="LeftFileList" Margin="10" MouseDoubleClick="OnLeftFileListDoubleClick"/>
+        </StackPanel>
+
+        <!-- Panel prawy -->
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Prawa Kolumna" FontWeight="Bold" Margin="10"/>
+            <ListBox Name="RightFileList" Margin="10" MouseDoubleClick="OnRightFileListDoubleClick"/>
+        </StackPanel>
+    </Grid>
+</Window>
